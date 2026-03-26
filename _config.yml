@@ -89,5 +89,5 @@ theme: cards
 # Deployment
 deploy:
   type: git
-  repo: https://github.com/gyh2020123/gyh2020123.github.io.git
+  repo: git@github.com:gyh2020123/gyh2020123.github.io.git
   branch: main
