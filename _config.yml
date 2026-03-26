@@ -86,6 +86,12 @@ ignore:
 # Extensions
 theme: cards
 
+# 隐藏文章插件
+hide_posts:
+  enable: true
+  # 可以设置隐藏文章的列表名
+  filter: hidden
+
 # Deployment
 deploy:
   type: git
