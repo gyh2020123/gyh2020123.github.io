@@ -1,0 +1,317 @@
+/* 自定义美化样式 - 杨椒棋的博客 */
+
+:root {
+  --main-color: #667eea;
+  --gradient-start: #667eea;
+  --gradient-end: #764ba2;
+}
+
+/* 头部样式 */
+.header {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 20px rgba(102, 126, 234, 0.3);
+}
+
+.header .logo__text {
+  color: white !important;
+  font-weight: 600;
+}
+
+.header .navbar-menu {
+  color: rgba(255, 255, 255, 0.9) !important;
+  transition: all 0.3s ease;
+}
+
+.header .navbar-menu:hover {
+  color: white !important;
+  background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.header #btn-search svg,
+.header #btn-toggle-dark svg {
+  fill: white !important;
+}
+
+/* 背景样式 */
+body {
+  background: linear-gradient(180deg, #f8f9fc 0%, #eef1f5 100%);
+  background-attachment: fixed;
+}
+
+/* 文章卡片样式优化 */
+.post-entry {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.post-entry::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 0;
+  background: linear-gradient(180deg, var(--gradient-start), var(--gradient-end));
+  transition: height 0.3s ease;
+}
+
+.post-entry:hover::before {
+  height: 100%;
+}
+
+.post-entry:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(102, 126, 234, 0.15);
+}
+
+.post-entry__content .post-entry__title {
+  font-size: 1.4rem;
+  color: #2d3748;
+  transition: color 0.3s ease;
+}
+
+.post-entry:hover .post-entry__title {
+  color: var(--main-color);
+}
+
+/* 标签样式 */
+.post-entry__tags .post-tags__link {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+  color: var(--main-color) !important;
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.post-entry__tags .post-tags__link:hover {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: white !important;
+}
+
+/* 内容卡片样式 */
+.content-card {
+  border-radius: 16px;
+  border: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+/* 页脚样式 */
+.footer {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: rgba(255, 255, 255, 0.8) !important;
+  margin-top: 0;
+  padding: 3rem 0 !important;
+}
+
+.footer a {
+  color: rgba(255, 255, 255, 0.7) !important;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: white !important;
+}
+
+/* 回到顶部按钮 */
+.footer #b2t {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: white !important;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  transition: all 0.3s ease;
+}
+
+.footer #b2t:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+}
+
+/* 动画效果 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.post-entry {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.post-entry:nth-child(1) { animation-delay: 0.1s; }
+.post-entry:nth-child(2) { animation-delay: 0.2s; }
+.post-entry:nth-child(3) { animation-delay: 0.3s; }
+.post-entry:nth-child(4) { animation-delay: 0.4s; }
+.post-entry:nth-child(5) { animation-delay: 0.5s; }
+
+/* 淡入动画 */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.content-card {
+  animation: fadeIn 0.8s ease;
+}
+
+/* 移动端适配优化 */
+@media screen and (max-width: 764px) {
+  .header {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  }
+  
+  .header .dropdown-menus {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  }
+  
+  .post-entry {
+    margin-bottom: 1rem;
+    border-radius: 12px;
+  }
+  
+  .post-entry:hover {
+    transform: translateY(-4px);
+  }
+  
+  .content-card {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+  
+  .footer {
+    padding: 2rem 1rem !important;
+  }
+  
+  body {
+    font-size: 15px;
+  }
+  
+  .post-entry__content .post-entry__title {
+    font-size: 1.2rem;
+  }
+}
+
+/* 文章详情页优化 */
+.post__content h1,
+.post__content h2,
+.post__content h3 {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.post__content h1::before,
+.post__content h2::before,
+.post__content h3::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--gradient-start), var(--gradient-end));
+  border-radius: 2px;
+}
+
+/* 链接样式优化 */
+.post__content a {
+  color: var(--main-color);
+  border-bottom: 1px dashed var(--main-color);
+  transition: all 0.3s ease;
+}
+
+.post__content a:hover {
+  color: var(--gradient-end);
+  border-bottom-style: solid;
+}
+
+/* 代码块样式 */
+.post__content code {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.08), rgba(118, 75, 162, 0.08));
+  color: #e91e63;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.post__content pre {
+  background: #2d2d2d !important;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.post__content pre code {
+  background: transparent !important;
+  color: #f8f8f2;
+  padding: 0;
+}
+
+/* 引用块样式 */
+.post__content blockquote {
+  border-left: 4px solid var(--main-color);
+  background: linear-gradient(90deg, rgba(102, 126, 234, 0.05), transparent);
+  padding: 1rem 1.5rem;
+  border-radius: 0 8px 8px 0;
+  margin: 1.5rem 0;
+}
+
+/* 搜索框样式 */
+.search-form .search-input {
+  border-bottom: 2px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.search-form .search-input:focus {
+  border-bottom-color: var(--main-color);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+/* 标签页样式 */
+.post-tags__link,
+.post-cats__link {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+  color: var(--main-color) !important;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.post-tags__link:hover,
+.post-cats__link:hover {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: white !important;
+  transform: translateY(-2px);
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--gradient-start), var(--gradient-end));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gradient-end);
+}
+
+/* 加载动画 */
+.main {
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+  animation-delay: 0.2s;
+}
