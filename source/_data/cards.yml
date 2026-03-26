@@ -1,0 +1,28 @@
+# Cards主题配置
+
+# 导航菜单
+menu:
+  首页: /
+  归档: /archives
+  标签: /tags
+  关于: /about
+
+# 社交链接
+social:
+  github: https://github.com/gyh2020123
+  # weibo: 
+  # zhihu: 
+  # email: mailto:your@email.com
+
+# 头像
+avatar: /images/avatar.png
+
+# 页脚
+footer:
+  since: 2024
+
+# 其他设置
+post_meta:
+  date: true
+  category: true
+  tag: true
